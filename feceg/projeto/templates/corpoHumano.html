@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'projeto/css/areamap.css' %}" />
+<div class="interface">
+  <!-- Title -->
+  <br />
+
+  <h2 class="line">Human Body</h2>
+  <p style="text-align: center;">Clique em uma parte da figura:</p>
+
+  <div class="image-container">
+    <img
+      src="{% static 'projeto/img/corpo/human.png' %}"
+      usemap="#image-map"
+      class="image"
+      onclick="changeInfo()"
+    />
+  </div>
+
+  <map name="image-map">
+    <area
+      data-text="Nossos pés nos ajudam a caminhar, chutar e pular, sustentam o corpo e possibilitam muita diversão no futebol!"
+      href=""
+      alt="Pé"
+      title="Foot"
+      coords="152,591,176,591,210,644,183,659,150,614"
+      shape="poly"
+    />
+    <area
+      data-text="A cabeça tem as partes do corpo que nos ajudam a sentir os sabores, a falar, a ouvir e a cheirar as coisas
+        A cabeça é o lugar onde temos os órgãos que nos ajudam a sentir diversas coisas."
+      href=""
+      alt="Cabeça"
+      title="Head"
+      coords="123,83,78"
+      shape="circle"
+    />
+    <area
+      data-text="As mãos servem para pegar os brinquedos, servem para apertos de mãos e junto com os dedos elas são fundamentais!"
+      href=""
+      alt="Mão"
+      title="Hand"
+      coords="196,331,216,329,227,350,224,385,203,397,187,376"
+      shape="poly"
+    />
+    <area
+      data-text="Na barriga estão outros órgãos que recebem tudo que comemos. É um longo caminho que a comida faz, viu só?"
+      href=""
+      alt="Barriga"
+      title="Belly"
+      coords="79,307,120,317,160,307,164,252,74,254"
+      shape="poly"
+    />
+    <area
+      data-text="Os braços sãos os membros superiores do corpo, são longos e fortes e ajudam a manter o equilíbro ao caminhar!"
+      alt="Braços"
+      title="Arms"
+      href=""
+      coords="84,178,41,332,51,377,33,397,13,385,9,346,21,329,54,185"
+      shape="poly"
+    />
+    <area
+      data-text="As pernas são os membros inferiores do corpo, sustentam as demais partes e nos possibilitam caminhar, jogar bola não
+        seria possível sem as pernas!"
+      alt="Pernas"
+      title="Leg"
+      href=""
+      coords="63,432,102,440,88,560,88,609,54,660,27,648,60,592"
+      shape="poly"
+    />
+  </map>
+
+  <div class="root" style="display: none;">
+    <div class="info">
+      <div class="info-content">
+        <p class="close-button">X</p>
+        <div class="content" style="display: flex;">
+          <div class="texts">
+            <h2 class="main"></h2>
+            <p class="text"></p>
+          </div>
+          <img class="main-img body-img" />
+        </div>
+        <button class="button" style="width: 100px;">Okay!</button>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'projeto/js/areamap_corpo.js' %}"></script>
+  {% endblock content %}
+</div>

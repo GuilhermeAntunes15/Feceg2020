@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <style>
+    body {
+      background-color: #b7e4ff;
+    }
+  </style>
+  <h1 class="space line mt-5">⭐</h1>
+
+  <div class="space information mb-5">
+    <img src="{% static 'projeto/img/mascote/robot_idle.png' %}" />
+    <div class="ml-3">
+      <h2>Sobre</h2>
+      <h5>
+        Site educacional voltado ao aprendizado da língua inglesa, para crianças
+        de 4 à 7 anos de idade. Feito pelos alunos da Etec
+      </h5>
+    </div>
+  </div>
+</div>
+{% endblock content %}

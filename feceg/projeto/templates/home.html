@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- Section -->
+<!-- Cabeçalho -->
+<div id="all">
+  <style>
+    body {
+      background-color: #b7e4ff;
+    }
+  </style>
+  <!-- Section -->
+  <section>
+    <div class="interface">
+      <h1 class="line">Conheça o Site</h1>
+
+      <video controls poster="img\image2.jpg" class="video space">
+        <source
+          src="#"
+        />
+      </video>
+
+      <h1 class="space line">⭐</h1>
+
+      <div class="space information robot-container">
+        <img src="{% static 'projeto/img/mascote/robot_idle.png' %}" />
+        <div>
+          <h2>Kidding</h2>
+          <p>
+            Site educacional voltado ao aprendizado da língua inglesa, para
+            crianças de 4 à 7 anos de idade.
+          </p>
+        </div>
+      </div>
+
+      <h3 class="line space mt-3">O que o site oferece?</h3>
+
+      <!-- Imagem com informação 1 -->
+      <div class="img-caption-right">
+        <div class="img-caption">
+          <div class="text">
+            <h2>Videos Educativos</h2>
+            <p>
+              Com parceria com canais de Youtube e/ou Escola o site oferece
+              videos educativos
+            </p>
+          </div>
+          <img
+            src="{% static 'projeto/img/img-circle.png' %}"
+            class="img-circle"
+          />
+        </div>
+      </div>
+
+      <!-- Imagem com informação 2 -->
+      <div class="img-caption-left">
+        <div class="img-caption">
+          <img
+            src="{% static 'projeto/img/img-circle.png' %}"
+            class="img-circle"
+          />
+
+          <div class="text">
+            <h2>Chat Bot</h2>
+            <p>As crianças podem praticar e se divertir com o Bot Charlie</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagem com informação 3 -->
+      <div class="img-caption-right">
+        <div class="img-caption">
+          <div class="text">
+            <h2>Jogos</h2>
+            <p>
+              As crianças aprendem de forma divertidas com jogos educacionais
+            </p>
+          </div>
+          <img
+            src="{% static 'projeto/img/img-circle.png' %}"
+            class="img-circle"
+          />
+        </div>
+      </div>
+      <br />
+    </div>
+  </section>
+</div>
+
+<!-- Fim do Section -->
+{% endblock content %}

@@ -1,0 +1,182 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<head>
+  <link rel="stylesheet" href="{% static 'projeto/css/new.css' %}" />
+</head>
+<div class="interface">
+  <!-- Title -->
+  <br />
+  <div class="line"></div>
+  <div class="title"><p>Game of Animals</p></div>
+  <br />
+  <span class="line2">
+    <h4 style="padding-left: 10px; padding-right: 10px;">
+      Clique em um animal:
+    </h4>
+  </span>
+  <br /><br />
+  <!-- modal -->
+  <div class="container">
+    <img
+      data-toggle="modal"
+      data-target="#myModal"
+      src="https://img.icons8.com/plasticine/100/000000/help.png"
+    />
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Help</h3>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Clique em um animal e ouça como se fala em inglês e veja como se
+            escreve.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Balls -->
+  <div class="container">
+    <div class="container-balls">
+      <div class="row cores">
+        <div class="item cor">
+          <img
+            id="foto1"
+            class="foto"
+            src="{% static 'projeto/img/animals/cow.jpg' %}"
+            alt="Cow"
+            draggable="false"
+            onclick="MudaAnimal(this.src, this.alt)"
+          />
+        </div>
+        <div class="item cor">
+          <img
+            id="foto2"
+            class="foto"
+            src="{% static 'projeto/img/animals/cat.jpg' %}"
+            alt="Cat"
+            draggable="false"
+            onclick="MudaAnimal(this.src, this.alt)"
+          />
+        </div>
+        <div class="item cor">
+          <img
+            id="foto2"
+            class="foto"
+            src="{% static 'projeto/img/animals/dog.jpg' %}"
+            alt="Dog"
+            draggable="false"
+            onclick="MudaAnimal(this.src, this.alt)"
+          />
+        </div>
+        <div class="item cor">
+          <img
+            id="foto2"
+            class="foto"
+            src="{% static 'projeto/img/animals/horse.jpg' %}"
+            alt="Horse"
+            draggable="false"
+            onclick="MudaAnimal(this.src, this.alt)"
+          />
+        </div>
+      </div>
+      <div class="row cores">
+        <div class="item cor">
+          <img
+            id="foto2"
+            class="foto"
+            src="{% static 'projeto/img/animals/duck.jpg' %}"
+            alt="Duck"
+            draggable="false"
+            onclick="MudaAnimal(this.src, this.alt)"
+          />
+        </div>
+        <div class="item cor">
+          <img
+            id="foto2"
+            class="foto"
+            src="{% static 'projeto/img/animals/mouse.jpg' %}"
+            alt="Mouse"
+            draggable="false"
+            onclick="MudaAnimal(this.src, this.alt)"
+          />
+        </div>
+        <div class="item cor">
+          <img
+            id="foto2"
+            class="foto"
+            src="{% static 'projeto/img/animals/chicken.jpg' %}"
+            alt="Chicken"
+            draggable="false"
+            onclick="MudaAnimal(this.src, this.alt)"
+          />
+        </div>
+        <div class="item cor">
+          <img
+            id="foto2"
+            class="foto"
+            src="{% static 'projeto/img/animals/lion.jpg' %}"
+            alt="Lion"
+            draggable="false"
+            onclick="MudaAnimal(this.src, this.alt)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'projeto/js/som.js' %}"></script>
+
+    <br /><br /><br />
+    <div class="answer"></div>
+    <div class="anwer-container">
+      <div class="answer-img">
+        <img
+          id="img_destaque"
+          src="{% static 'projeto/img/wizard.png' %}"
+          draggable="false"
+          alt="Imagem selecionada"
+          title="Imagem selecionada"
+        />
+        <p id="texto_destaque" style="color: white;">Color</p>
+        <audio id="audio"></audio>
+      </div>
+
+      <input
+        class="btn btn-primary col-lg-3"
+        type="reset"
+        value="Limpar"
+        onclick="location.reload();"
+      />
+      <div id="robot-container">
+        <img
+          src="{% static 'projeto/img/mascote/robot_feliz.png' %}"
+          style="width: 150px"
+          id="robot-img"
+        />
+
+        <a class="text-light" href="{% url 'tente_vc_animals' %}">
+          <button class="btn botao btn-primary col-lg-2">
+            Try it yourself
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <br />
+</div>
+{% endblock content %}

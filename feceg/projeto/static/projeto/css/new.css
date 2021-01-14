@@ -1,0 +1,160 @@
+@charset "UTF-8";
+body {
+  overflow-x: hidden;
+  background: linear-gradient(#b7e4ff, rgb(162, 201, 226));
+  margin: 0px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root {
+  --color1: #00b5ff;
+  --color2: #ffc122;
+}
+.title {
+  background: linear-gradient(#004b79, rgb(0, 116, 189));
+  border-top: 15px solid var(--color1);
+  border-bottom: 15px solid var(--color1);
+}
+.line2 {
+  background-color: var(--color2);
+  height: 5px;
+  display: block;
+}
+.line2 h4 {
+  display: table;
+  background-color: #c6e9ff;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 38%;
+}
+
+/* Formatação da Interface */
+.title p {
+  color: white;
+  font-weight: bolder;
+  font-size: 27pt;
+  text-align: center;
+}
+.container-balls {
+  margin-left: 8%;
+}
+.cor {
+  margin-left: 5%;
+}
+#game-container .cor {
+  margin-bottom: 50px;
+}
+.cor input {
+  margin-top: 0px;
+  float: top;
+  width: 175px;
+  z-index: 5;
+}
+.foto {
+  width: 175px;
+  padding: 10px;
+  border-radius: 100%;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  transition: all 200ms;
+  margin-bottom: 40px;
+}
+.foto:hover {
+  cursor: pointer;
+  padding: 5px;
+  transition: all 200ms;
+}
+.answer {
+  float: left;
+  height: 150px;
+  width: 500px;
+  margin-left: -150px;
+  background-color: var(--color2);
+  transition: all 600ms;
+}
+#img_destaque {
+  width: 250px;
+  padding: 10px;
+  border-radius: 100%;
+  background-color: aliceblue;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  margin-left: -200px;
+  margin-top: -40px;
+  transition: all 600ms;
+}
+p#texto_destaque {
+  font-size: 28pt;
+  font-weight: bold;
+  text-shadow: 3px 2px 1px #000;
+}
+/*Interface para Mobile */
+@media only screen and (max-width: 1099px) {
+  .interface {
+    margin-top: auto;
+    background-color: #c6e9ff;
+    width: 100%;
+    height: auto;
+  }
+  .line2 h4 {
+    margin-left: 20%;
+    transition: all 500ms;
+  }
+  .answer {
+    width: 1500px;
+  }
+  #img_destaque {
+    margin-left: 25%;
+    margin-top: -200px;
+  }
+  p#texto_destaque {
+    margin-top: 25px;
+    text-align: center;
+  }
+  #robot-img {
+    margin-left: 35%;
+  }
+  #robot-container {
+    background-color: var(--color1);
+  }
+}
+/* Interface para PC */
+@media only screen and (min-width: 1099px) {
+  input {
+    margin-right: 10%;
+    margin-top: -200px;
+    float: right;
+    position: absolute;
+  }
+  #game-container {
+    margin-left: 3%;
+  }
+  .botao {
+    float: top;
+    margin-top: -145px;
+    margin-left: 56%;
+    position: absolute;
+  }
+  #robot-img {
+    position: absolute;
+    float: top;
+    margin-left: 35%;
+    margin-top: -175px;
+  }
+  .interface {
+    background-color: #c6e9ff;
+    width: 90%;
+    margin-left: 5%;
+    height: auto;
+  }
+  p#texto_destaque {
+    position: absolute;
+    margin-top: -165px;
+  }
+}
+
+/* GAME */
+#check {
+  display: block;
+}
+#reset {
+  display: none;
+}

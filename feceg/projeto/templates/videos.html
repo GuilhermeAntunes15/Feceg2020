@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- Section -->
+<div id="all">
+  <style>
+    body {
+      background-color: aquamarine;
+    }
+  </style>
+  <!-- Section -->
+  <section>
+    <div class="interface">
+      <h1 class="line">Videos educativos</h1>
+      <br />
+
+      <h1 class="line">Números</h1>
+
+      <video controls poster="img\image2.jpg" class="video space">
+        <source
+          src="{% static 'projeto/img/y2mate.com - Steven Universe Future - Series Finale (Promo)_swut97lEmPs_360p.mp4' %}"
+        />
+      </video>
+    </div>
+    <div class="interface">
+      <br />
+      <h1 class="line">Letras</h1>
+
+      <video controls poster="img\image2.jpg" class="video space">
+        <source
+          src="{% static 'projeto/img/y2mate.com - Steven Universe Future - Series Finale (Promo)_swut97lEmPs_360p.mp4' %}"
+        />
+      </video>
+      <br />
+      <br />
+      <br />
+    </div>
+  </section>
+
+  <!-- Fim do Section -->
+  {% endblock content %}
+</div>

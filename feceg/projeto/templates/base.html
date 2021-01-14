@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kidding</title>
+    <link rel="icon" href="{% static 'projeto/img/mascote/logo.png' %}" />
+    <link
+      href="{% static 'projeto/css/navbar.css' %}"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'projeto/css/home.css' %}"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="{% static 'projeto/css/bootstrap.min.css '%}"
+    />
+
+    <style>
+      .space{
+        margin-top: 50px;
+      }
+      .logo{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        max-width: 340px;
+      }
+      .item{
+        outline: none;
+        color: white;
+      }
+      .item a:hover{text-decoration: none;}
+    </style>
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <div id="all">
+      <header>
+        <div class="nav-container">
+          <div class="mobile-list">
+            <a href="{% url 'home' %}"><img src="{% static 'projeto/img/mascote/logo1.png' %}" class="logo" /></a>
+            <div class="icon button" onclick="changeMenu()">
+              <img
+              style="width: 50px; height: 50px;"
+              src="{% static 'projeto/img/icone_menu.png' %}"
+              class="logo"
+              />
+            </div>
+          </div>
+
+          <div class="desktop-list">
+            <div class="item"><a class="text-light" href="{% url 'bot' %}"> Bot </a></div>
+            <div class="item"><a class="text-light" href="{% url 'videos' %}"> Vídeos </a></div>
+            <a href="{% url 'home' %}"><img src="{% static 'projeto/img/mascote/logo1.png' %}" class="logo" /></a>
+            <div class="item"><a class="text-light" href="{% url 'jogos' %}"> Jogos </a></div>
+            <div class="item"><a class="text-light" href="{% url 'fale_conosco' %}"> Sobre </a></div>
+          </div>
+        </div>
+
+        <!-- NavBar de Mobiles -->
+        <div  class="topnav" id="myNav"  style="display:none">
+          <ul id="myLinks">
+            <li><a href="{% url 'bot' %}">Bot</a></li>
+            <li><a href="{% url 'videos' %}">Vídeos</a></li>
+            <li><a href="{% url 'jogos' %}">Jogos</a></li>
+            <li><a href="{% url 'fale_conosco' %}">Sobre</a></li>
+          </div>
+        </div>
+      </header>
+    </div>
+
+      {% block content %} {% endblock content %}
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <br />
+        <p class="space">Guilherme Antunes, Wendell de Sousa</p>
+        <p>Copyright © Kidding | 2020</p>
+        <script
+          src="{% static 'projeto/js/script.js' %}"
+          type="text/javascript"
+        ></script>
+        <script src="{% static 'projeto/js/script.js' %}"></script>
+        <script src="{% static 'projeto/js/bootstrap.min.js' %}"></script>
+      </footer>
+    </div>
+  </body>
+</html>

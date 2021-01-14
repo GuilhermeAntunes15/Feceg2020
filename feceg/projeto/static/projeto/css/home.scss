@@ -1,0 +1,138 @@
+$interface-color: #c6e9ff;
+$background-color: #b7e4ff;
+
+$contrast-color: #004b79;
+$line-color: #00b5ff;
+$button-color: #ffc122;
+
+body {
+  background-color: $background-color;
+  overflow-x: hidden;
+}
+
+%centralize {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.interface {
+  @extend %centralize;
+  background-color: $interface-color;
+  width: 88vw;
+}
+
+.line {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.line:before,
+.line:after {
+  position: absolute;
+  margin: auto 10px;
+  top: 51%;
+  overflow: hidden;
+  width: 49%;
+  height: 10px;
+  content: "\a0";
+  background-color: $button-color;
+}
+.line:before {
+  margin-left: -50%;
+  text-align: right;
+}
+.video {
+  width: 70vw;
+  margin-left: 8vw;
+}
+
+.information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $line-color;
+  padding: 25px;
+  border-top: 10px solid $button-color;
+  border-bottom: 10px solid $button-color;
+  img {
+    width: 150px;
+    height: 110px;
+  }
+}
+
+.img-caption {
+  .text {
+    text-align: center;
+    padding: 10px;
+    background-color: $button-color;
+  }
+}
+.img-circle {
+  border-radius: 100%;
+}
+
+/* Desktop */
+@media screen and (min-width: 901px) {
+  .img-caption-right {
+    .img-caption {
+      img {
+        margin-left: -30px;
+      }
+      .text {
+        padding-left: 4vw !important;
+      }
+    }
+  }
+  .img-caption-left {
+    margin-left: 14vw;
+    img {
+      z-index: 1;
+    }
+    .img-caption {
+      .text {
+        margin-left: -30px;
+        padding-right: 6vw !important;
+      }
+    }
+  }
+  .img-caption {
+    display: flex;
+    align-items: center;
+    .text {
+      width: 55vw;
+    }
+  }
+}
+
+.img-caption-right,
+.img-caption-left {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* Mobile */
+@media screen and (max-width: 900px) {
+  .img-caption {
+    .text {
+      width: 100%;
+    }
+    display: flex;
+    justify-content: center;
+    img {
+      margin: 25px auto;
+    }
+  }
+  .img-caption-right {
+    .img-caption {
+      flex-direction: row-reverse;
+      flex-wrap: wrap-reverse;
+    }
+  }
+
+  .img-caption-left {
+    .img-caption {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}

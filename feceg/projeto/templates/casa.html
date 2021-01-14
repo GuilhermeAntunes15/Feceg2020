@@ -1,0 +1,104 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'projeto/css/areamap.css' %}" />
+<div class="interface">
+  <!-- Title -->
+  <br />
+
+  <h2 class="line">Parts of the house</h2>
+  <p style="text-align: center;">Clique em uma parte da figura:</p>
+
+  <div class="image-container">
+    <img
+      src="{% static 'projeto/img/casa/casa.png' %}"
+      style="margin: 75px auto; max-width: 100vw;"
+      usemap="#image-map"
+      class="image"
+      onclick="changeInfo()"
+    />
+  </div>
+
+  <map name="image-map">
+    <area
+      data-text="A cozinha é o lugar onde se prepara o almoço, o jantar e vários outras refeições. Fogão, geladeira e micro-ondas são alguns objetos domésticos presentes na cozinha. "
+      alt="Cozinha"
+      title="Kitchen"
+      href=""
+      coords="88,163,238,260"
+      shape="rect"
+    />
+    <area
+      data-text="As refeições são servidas na sala de jantar. Mesa e cadeiras são móveis presentes na sala de jantar."
+      alt="Sala de Jantar"
+      title="Dining Room"
+      href=""
+      coords="241,159,329,257"
+      shape="rect"
+    />
+    <area
+      data-text="A sala de estar é geralmente o lugar com mais lazer da casa, lá geralmente estão presentes sofás, televisão e cômodas"
+      alt="Sala de Estar"
+      title="Living Room"
+      href=""
+      coords="332,159,486,261"
+      shape="rect"
+    />
+    <area
+      data-text="As oficinas servem para trabalho e geralmente guardam ferramentas importantes e perigosas."
+      alt="Oficina"
+      title="Office"
+      href=""
+      coords="88,264,315,332"
+      shape="rect"
+    />
+    <area
+      data-text="Na lavanderia as roupas são lavadas e secas. Máquina de lavar, secadora e pias são alguns objetos típicos de lavanderias."
+      alt="Lavanderia"
+      title="Laundry"
+      href=""
+      coords="315,263,486,333"
+      shape="rect"
+    />
+    <area
+      data-text="O banheiro é um ambiente reservado para higiene pessoal, nele se toma banho, por exemplo. Chuveiro, pia e banheiras são objetos presentes nos banheiros."
+      alt="Banheiro"
+      title="Bathroom"
+      href=""
+      coords="224,58,342,158"
+      shape="rect"
+    />
+    <area
+      data-text="O quarto é o lugar onde dormimos. Camas, guarda-roupas e mesa de cabeceira são alguns móveis que geralmente estão presentes nos quartos."
+      alt="Quarto"
+      title="Bedroom"
+      href=""
+      coords="344,54,344,157,485,157,487,102,377,51"
+      shape="poly"
+    />
+    <area
+      data-text="O quarto é o lugar onde dormimos. Camas, guarda-roupas e mesa de cabeceira são alguns móveis que geralmente estão presentes nos quartos."
+      alt="Quarto"
+      title="Bedroom"
+      href=""
+      coords="222,58,222,157,87,160,87,107,178,54"
+      shape="poly"
+    />
+  </map>
+
+  <div class="root" style="display: none;">
+    <div class="info">
+      <div class="info-content">
+        <p class="close-button">X</p>
+        <div class="content" style="display: flex;">
+          <div class="texts">
+            <h2 class="main"></h2>
+            <p class="text"></p>
+          </div>
+          <img class="main-img home-img" />
+        </div>
+        <button class="button" style="width: 100px;">Okay!</button>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'projeto/js/areamap_casa.js' %}"></script>
+  {% endblock content %}
+</div>

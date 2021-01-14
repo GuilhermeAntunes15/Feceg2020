@@ -1,0 +1,186 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<head>
+  <link rel="icon" href="{% static 'projeto/img/wizard.png' %}" />
+
+  <link rel="stylesheet" href="{% static 'projeto/css/new.css' %}" />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="{% static 'projeto/css/bootstrap.min.css' %}" />
+</head>
+<div class="interface">
+  <!-- Title -->
+  <br />
+  <div class="line"></div>
+  <div class="title"><p>Game of Animals</p></div>
+  <br />
+  <span class="line2">
+    <h4 style="padding-left: 10px; padding-right: 10px;">
+      Coloque o nome dos animais:
+    </h4>
+  </span>
+  <br /><br />
+
+  <!-- modal -->
+  <div class="container">
+    <img
+      data-toggle="modal"
+      data-target="#myModal"
+      src="https://img.icons8.com/plasticine/100/000000/help.png"
+    />
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Help</h3>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Escreva o nome dos animais e aperte em corrigir.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="game-container">
+      <div class="container ml-4 bola mt-5">
+        <div class="row cores">
+          <div class="cor">
+            <img
+              id="foto1"
+              class="foto"
+              src="{% static 'projeto/img/animals/cow.jpg' %}"
+              draggable="false"
+            />
+            <input class="form-control" />
+          </div>
+          <div class="cor">
+            <img
+              id="foto2"
+              class="foto"
+              src="{% static 'projeto/img/animals/duck.jpg' %}"
+              draggable="false"
+            />
+            <input class="form-control" />
+          </div>
+          <div class="cor">
+            <img
+              id="foto2"
+              class="foto"
+              src="{% static 'projeto/img/animals/cat.jpg' %}"
+              draggable="false"
+            />
+            <input class="form-control" />
+          </div>
+          <div class="cor">
+            <img
+              id="foto2"
+              class="foto"
+              src="{% static 'projeto/img/animals/dog.jpg' %}"
+              draggable="false"
+            />
+            <input class="form-control" />
+          </div>
+        </div>
+        <div class="row cores mt-5 mb-3">
+          <div class="cor">
+            <img
+              id="foto2"
+              class="foto"
+              src="{% static 'projeto/img/animals/horse.jpg' %}"
+              draggable="false"
+            />
+            <input class="form-control" />
+          </div>
+          <div class="cor">
+            <img
+              id="foto2"
+              class="foto"
+              src="{% static 'projeto/img/animals/mouse.jpg' %}"
+              draggable="false"
+            />
+            <input class="form-control" />
+          </div>
+          <div class="cor">
+            <img
+              id="foto2"
+              class="foto"
+              src="{% static 'projeto/img/animals/chicken.jpg' %}"
+              draggable="false"
+            />
+            <input class="form-control" />
+          </div>
+          <div class="cor">
+            <img
+              id="foto2"
+              class="foto"
+              src="{% static 'projeto/img/animals/lion.jpg' %}"
+              draggable="false"
+            />
+            <input class="form-control" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <a href="{% url 'jogos' %}">
+      <button
+        id="botao"
+        class="btn btn-primary col-lg-3 mb-5"
+        style="background-color: red; float: left;"
+      >
+        Voltar
+      </button>
+    </a>
+    <span
+      id="result"
+      style="
+        font-size: 28pt;
+        margin-left: 7%;
+        font-weight: bold;
+        margin-bottom: 100px;
+      "
+    ></span>
+    <input
+      class="btn btn-primary col-lg-3 mb-5"
+      type="submit"
+      id="check"
+      value="Corrigir"
+    />
+    <input
+      class="btn btn-primary col-lg-3 mb-5"
+      type="submit"
+      id="reset"
+      value="Refazer"
+      style="display: none; background-color: darkslateblue;"
+    />
+    <br />
+    <br />
+  </div>
+  <br />
+  <br />
+</div>
+
+<script src="{% static 'projeto/js/game.js' %}" type="text/Javascript"></script>
+
+{% endblock content %}

@@ -1,0 +1,158 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'projeto/css/jogos.css' %}" />
+</head>
+
+<style>
+  body {
+    /* The image used */
+    background-image: url('/static/projeto/img/parallax.jpg');
+
+    /* Set a specific height */
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<div class="container divv pb-5">
+  <h1 class="mb-4 mt-3">
+    <strong class="text-light">Games</strong>
+  </h1>
+  <div class="row mx-auto justify-content-center">
+    <div class="col-md-4 mt-4">
+      <div class="card">
+        <img
+          src="{% static 'projeto/img/prints/cores.png' %}"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Game of Colors</h5>
+          <p class="card-text">Descubra as cores</p>
+
+          <a class="text-light" href="{% url 'cores' %}">
+            <button class="btn btn-primary col-lg-8">
+              Game of Colors
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-4">
+      <div class="card">
+        <img
+          src="{% static 'projeto/img/prints/numeros.png' %}"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Draw Digits</h5>
+          <p class="card-text">Desenhe e descubra os números</p>
+
+          <a class="text-light" href="{% url 'digit' %}">
+            <button class="btn btn-primary col-lg-8">
+              Draw Digits
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+        <div class="col-md-4 mt-4">
+      <div class="card">
+        <img
+          src="{% static 'projeto/img/prints/casa.png' %}"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">House game</h5>
+          <p class="card-text">Descubra as partes de uma casa</p>
+
+          <a class="text-light" href="{% url 'casa' %}">
+            <button class="btn btn-primary col-lg-8">
+              House game
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-4">
+      <div class="card">
+        <img
+          src="{% static 'projeto/img/prints/formas.png' %}"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Draw Shapes</h5>
+          <p class="card-text">Desenhe e descubra as formas</p>
+          <a class="text-light" href="{% url 'shape' %}">
+            <button class="btn btn-primary col-lg-8">
+              Draw Shapes
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-4">
+      <div class="card">
+        <img
+          src="{% static 'projeto/img/prints/human.png' %}"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Human Body</h5>
+          <p class="card-text">Descubra o corpo humano</p>
+          <a class="text-light" href="{% url 'corpoHumano' %}">
+            <button class="btn btn-primary col-lg-8">
+              Human Body
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-4">
+      <div class="card">
+        <img
+          src="{% static 'projeto/img/prints/animals.png' %}"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Game of Animals</h5>
+          <p class="card-text">Aprenda sobre os animais</p>
+
+          <a class="text-light" href="{% url 'jogo_animals' %}">
+            <button class="btn btn-primary col-lg-8">
+              Game of Animals
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script
+  src="{% static 'projeto/js/script.js' %}"
+  type="text/javascript"
+></script>
+<!-- <script
+          src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+          crossorigin="anonymous"
+        ></script> -->
+<script src="{% static 'projeto/js/bootstrap.min.js' %}"></script>
+
+{% endblock content %}

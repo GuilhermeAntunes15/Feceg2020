@@ -1,0 +1,40 @@
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(75, 78, 250);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(75, 78, 250);
+}
+
+.divv {
+  margin-top: 10%;
+  background-color: #004b79;
+  margin-bottom: 10%;
+  border: solid black;
+}
+
+h1 {
+  margin: 10% 0 0 44%;
+}
+
+@media only screen and (max-width: 920px) {
+  .divv {
+    margin-top: 20%;
+  }
+
+  h1 {
+    margin: 10% 0 0 39%;
+  }
+}

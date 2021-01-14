@@ -1,0 +1,193 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- modal -->
+<div class="container" style="background-color: inherit; border: inherit;">
+  <img
+    data-toggle="modal"
+    data-target="#myModal"
+    src="https://img.icons8.com/plasticine/100/000000/help.png"
+  />
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Help</h3>
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Assista ao vídeo educacional sobre números e depois neste jogo clique
+          no Random, desenhe o número pedido e clique em advinhar.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          style="background-color: red;"
+          class="btn btn-default"
+          data-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<head>
+  <style type="text/css">
+    body {
+      background: #ddd;
+    }
+    div.container {
+      display: flex;
+      flex-direction: row;
+      margin: 80px;
+      border: 2px solid #777;
+      background: #fff;
+      border-radius: 10px;
+    }
+    .btn {
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .btn2 {
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0px 0px 10px;
+      color: #fff;
+      font-size: 20px;
+    }
+    .clear {
+      background: #0080ff;
+      border: 1px solid #fff;
+    }
+    .ramdom {
+      background: #ff3300;
+      border: 1px solid #fff;
+    }
+    .predict {
+      background: #33ff99;
+      border: 1px solid #fff;
+    }
+  </style>
+  <!-- Load the Paper.js library -->
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    type="text/javascript"
+    src="{% static 'projeto/js/paper-full.min.js' %}"
+  ></script>
+  <script type="text/javascript">
+    // Only executed our code once the DOM is ready.
+    paper.install(window);
+    window.onload = function () {
+      // Get a reference to the canvas object
+      var canvas = document.getElementById('myCanvas');
+      var button_clear = document.getElementById('clear');
+      var button_predict = document.getElementById('predict');
+      var output = document.getElementById('output');
+      // Create an empty project and a view for the canvas:
+      paper.setup(canvas);
+      var tool = new Tool();
+      var path;
+      000;
+      var rect = new Path.Rectangle({
+        point: [0, 0],
+        size: [view.size.width, view.size.height],
+        strokeColor: '#000',
+        selected: true,
+      });
+      rect.sendToBack();
+      rect.fillColor = '#fff';
+
+      // Define a mousedown and mousedrag handler
+      button_clear.onclick = function (event) {
+        project.activeLayer.remove();
+        var sorteio = document.getElementById('sorteio');
+        sorteio.innerHTML = '';
+        var decisao = document.getElementById('decisao');
+        decisao.innerHTML = '';
+        var output = document.getElementById('output');
+        output.innerHTML = '';
+        var rect = new Path.Rectangle({
+          point: [0, 0],
+          size: [view.size.width, view.size.height],
+          strokeColor: 'black',
+          selected: true,
+        });
+        rect.sendToBack();
+        rect.fillColor = '#fff';
+      };
+      // request to predict view
+      button_predict.onclick = function (event) {
+        var imageData = canvas.toDataURL('image/jpeg');
+        setTimeout(function () {
+          document.getElementById('botao').click();
+        }, 3000);
+        $.ajax({
+          url: '',
+          method: 'POST',
+          data: {
+            image: imageData,
+          },
+          success: function (data) {
+            output.innerHTML = data.output;
+          },
+          error: function (error) {},
+        });
+      };
+      tool.onMouseDown = function (event) {
+        path = new Path();
+        path.strokeColor = 'black';
+        path.strokeWidth = '7';
+        path.add(event.point);
+      };
+
+      tool.onMouseDrag = function (event) {
+        path.add(event.point);
+      };
+    };
+  </script>
+</head>
+<div class="container">
+  <div>
+    <canvas id="myCanvas" resize width="600" height="600"></canvas>
+  </div>
+  <div>
+    <div>
+      <button id="ramdom" class="btn2 ramdom" onclick="generateNumber()">
+        Random
+      </button>
+      <h1>Number: <span id="sorteio"></span></h1>
+    </div>
+
+    <br />
+    <hr />
+    <button id="clear" class="btn clear">Limpar</button>
+    <button id="predict" class="btn predict">Advinhar</button>
+    <h1>Result: <span id="output"></span></h1>
+    <br />
+    <hr />
+    <h1><span id="decisao"></span></h1>
+    <button
+      id="botao"
+      style="opacity: 0;"
+      class="btn2 ramdom"
+      onclick="checkAnswer()"
+    ></button>
+  </div>
+</div>
+<script src="{% static 'projeto/js/sorteia.js' %}"></script>
+{% endblock content %}
